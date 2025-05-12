@@ -167,3 +167,4 @@ C:\Users\EI13693\OneDrive - Tietoevry\Desktop\BFSI_Training_Mentoring\PatientHis
 C:\Users\EI13693\OneDrive - Tietoevry\Desktop\BFSI_Training_Mentoring\PatientHistoryManagementSystem\PatientHistoryAPI\obj\Debug\net8.0\PatientHistoryAPI.pdb
 C:\Users\EI13693\OneDrive - Tietoevry\Desktop\BFSI_Training_Mentoring\PatientHistoryManagementSystem\PatientHistoryAPI\obj\Debug\net8.0\PatientHistoryAPI.genruntimeconfig.cache
 C:\Users\EI13693\OneDrive - Tietoevry\Desktop\BFSI_Training_Mentoring\PatientHistoryManagementSystem\PatientHistoryAPI\obj\Debug\net8.0\ref\PatientHistoryAPI.dll
+C:\Users\EI13693\OneDrive - Tietoevry\Desktop\BFSI_Training_Mentoring\PatientHistoryManagementSystem\PatientHistoryAPI\obj\Debug\net8.0\PatientHistoryAPI.sourcelink.json
