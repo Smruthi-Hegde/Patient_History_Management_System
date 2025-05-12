@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PatientHistoryAPI.Models;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,7 +16,8 @@ builder.Services.AddControllers()
 builder.Services.AddDbContext<PatientHistoryDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add Swagger generation
+
+// Add Swagger generation for API documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -40,14 +42,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Enable HTTPS redirection
+// Enable HTTPS redirection (for security)
 app.UseHttpsRedirection();
 
-// Enable CORS
+// Enable CORS for all controllers
 app.UseCors("AllowAll");
 
+// Enable authorization middleware (for security/authentication)
 app.UseAuthorization();
 
+// Map the controllers to the API endpoints
 app.MapControllers();
 
+// Run the application
 app.Run();

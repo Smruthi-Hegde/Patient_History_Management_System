@@ -23,7 +23,7 @@ namespace PatientHistoryAPI.Controllers
             var diagnoses = await _context.Diagnoses
                 .Include(d => d.Visit)  // Include the related Visit entity
                 .ToListAsync();
-            
+
             return diagnoses;
         }
 
