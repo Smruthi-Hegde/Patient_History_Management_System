@@ -24,9 +24,9 @@ builder.Services.AddSwaggerGen();
 // Enable CORS (allow everything for development)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowBlazorClient", policy =>
     {
-        policy.AllowAnyOrigin()
+         policy.WithOrigins("http://localhost:5268")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -46,7 +46,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Enable CORS for all controllers
-app.UseCors("AllowAll");
+app.UseCors("AllowBlazorClient");
 
 // Enable authorization middleware (for security/authentication)
 app.UseAuthorization();

@@ -7,7 +7,7 @@ namespace PatientHistoryAPI.Dtos
         public int? DoctorId { get; set; }
         public string? Notes { get; set; }
 
-          // Add Diagnoses and Medications to the DTO if not already present
+        // Add Diagnoses and Medications to the DTO if not already present
         public List<string> Diagnoses { get; set; } = new List<string>();
         public List<string> Medications { get; set; } = new List<string>();
     }

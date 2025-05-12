@@ -51,7 +51,7 @@ namespace PatientHistoryAPI.Controllers
                 Medication = dto.Medication,
                 Dosage = dto.Dosage,
                 Duration = dto.Duration,
-               
+
             };
 
             _context.Prescriptions.Add(prescription);
@@ -62,41 +62,41 @@ namespace PatientHistoryAPI.Controllers
 
         // PUT: api/Prescriptions/5
         [HttpPut("{id}")]
-public async Task<IActionResult> Update(int id, PrescriptionCreateDto dto)
-{
-    if (id != dto.PrescriptionId)
-        return BadRequest("Prescription ID mismatch.");
+        public async Task<IActionResult> Update(int id, PrescriptionCreateDto dto)
+        {
+            if (id != dto.PrescriptionId)
+                return BadRequest("Prescription ID mismatch.");
 
-    // Check if the VisitId exists in the Visits table
-    var visitExists = await _context.Visits.AnyAsync(v => v.VisitId == dto.VisitId);
-    if (!visitExists)
-        return NotFound($"Visit with ID {dto.VisitId} does not exist.");
+            // Check if the VisitId exists in the Visits table
+            var visitExists = await _context.Visits.AnyAsync(v => v.VisitId == dto.VisitId);
+            if (!visitExists)
+                return NotFound($"Visit with ID {dto.VisitId} does not exist.");
 
-    var prescription = await _context.Prescriptions.FindAsync(id);
-    if (prescription == null)
-        return NotFound();
+            var prescription = await _context.Prescriptions.FindAsync(id);
+            if (prescription == null)
+                return NotFound();
 
-    // Update the prescription fields
-    prescription.VisitId = dto.VisitId;
-    prescription.Medication = dto.Medication;
-    prescription.Dosage = dto.Dosage;
-    prescription.Duration = dto.Duration;
+            // Update the prescription fields
+            prescription.VisitId = dto.VisitId;
+            prescription.Medication = dto.Medication;
+            prescription.Dosage = dto.Dosage;
+            prescription.Duration = dto.Duration;
 
 
-    // Save changes to the database
-    try
-    {
-        await _context.SaveChangesAsync();
-    }
-    catch (DbUpdateException ex)
-    {
-        // Log the error details for debugging
-        Console.WriteLine(ex.InnerException?.Message);
-        return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the prescription.");
-    }
+            // Save changes to the database
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Log the error details for debugging
+                Console.WriteLine(ex.InnerException?.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the prescription.");
+            }
 
-    return NoContent();
-}
+            return NoContent();
+        }
 
 
         // DELETE: api/Prescriptions/5

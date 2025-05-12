@@ -7,7 +7,7 @@ namespace PatientHistoryAPI.Dtos
         public DateTime? VisitDate { get; set; }
         public int? DoctorId { get; set; }
         public string? Notes { get; set; }
-      public List<string> Diagnoses { get; set; } = new List<string>();
+        public List<string> Diagnoses { get; set; } = new List<string>();
         public List<string> Medications { get; set; } = new List<string>();
     }
 }

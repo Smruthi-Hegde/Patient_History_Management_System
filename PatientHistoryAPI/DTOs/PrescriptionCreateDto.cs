@@ -6,6 +6,6 @@ namespace PatientHistoryAPI.DTOs
         public string Medication { get; set; } = string.Empty;
         public string Dosage { get; set; } = string.Empty;
         public string Duration { get; set; } = string.Empty;
-        public int PrescriptionId { get; set; } // Adding PrescriptionId for the Update scenario
+        public int PrescriptionId { get; set; }
     }
 }

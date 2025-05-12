@@ -14,5 +14,5 @@ public partial class Diagnosis
     public string? Description { get; set; }
 
     public virtual Visit? Visit { get; set; }
-    
+
 }
